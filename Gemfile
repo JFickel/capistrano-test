@@ -33,6 +33,7 @@ group :doc do
 end
 
 group :development do
+  gem 'capistrano', '2.15.5'
   gem 'capistrano-fiftyfive', :github => '55minutes/capistrano-fiftyfive', :branch => :master
 end
 

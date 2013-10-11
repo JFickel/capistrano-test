@@ -12,6 +12,7 @@ set :branch, "master"
 
 set :user, "deployer"
 set :rails_env, "production"
+set :scm_passphrase, "password"
 
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
