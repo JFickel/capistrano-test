@@ -4,16 +4,23 @@ Capistrano::Fiftyfive.load(:autorun => true)
 set :project_root, File.expand_path("../..", __FILE__)
 
 
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "capistrano-test"
+set :repository,  "git@github.com:JFickel/capistrano-test.git"
+
+set :scm, :git
+set :branch, "master"
+
+set :user, "deployer"
+set :rails_env, "production"
+
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "165.225.150.138"                          # Your HTTP server, Apache/etc
+role :app, "165.225.150.138"                          # This may be the same as your `Web` server
+role :db,  "165.225.150.138", :primary => true # This is where Rails migrations will run
+role :db,  "165.225.150.138"
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
